@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
  
 export default class ClearButton extends Component {
   render() {
-    const removeCompleted = this.props.removeCompleted;
     return (
-      <button style={styles.button} onClick={this.props.removeCompleted}>Clear Completed</button>
+      <button style={styles.button} onClick={this.props.clearCompleted}>Clear Completed</button>
     )
   }
 }

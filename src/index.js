@@ -64,7 +64,32 @@ class TodoListApp extends Component {
         {id: 1, todo: "Learn Redux", completed: false},
         {id: 2, todo: "Pet a cat", completed: false}
       ]
-    }
+    };
+    this.toggleComplete = this.toggleComplete.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
+    this.clearCompleted = this.clearCompleted.bind(this);
+  }
+
+  toggleComplete(item) {
+    let todos = this.state.todos.map(todo => {
+      if (item.id === todo.id) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    })
+    this.setState({ todos });
+  }
+
+  removeTodo(item) {
+    let todos = this.state.todos.filter(todo => 
+      (todo.id !== item.id)
+    )
+    this.setState({ todos })
+  }
+
+  clearCompleted() {
+    let todos = this.state.todos.filter(todo => !todo.completed)
+    this.setState({ todos })
   }
 
 
@@ -74,8 +99,8 @@ class TodoListApp extends Component {
       <div style={styles}>
         <TodoListHeader />
         <TodoInput />
-        <TodoList todoListItems={todos}/>
-        <TodoListFooter todoCount={todos.length}/>
+        {(todos.length > 0) ? (<TodoList todoListItems={todos} toggleComplete={this.toggleComplete} removeTodo={this.removeTodo}/>) : "Nothing to do"}
+        <TodoListFooter todoCount={todos.length} clearCompleted={this.clearCompleted}/>
       </div>
     );
   }

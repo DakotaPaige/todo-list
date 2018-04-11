@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 export default class TodoItem extends Component {
   render() {
-    const { item } = this.props;
+    const { item, toggleComplete , removeTodo} = this.props;
     return (
       <li style={styles.listItem}>
         <span>{item.todo}</span>
-        <input type="checkbox" id={item.id} checked={item.complete} />
-        <button style={styles.trashButton}>Trash</button>
+        <input type="checkbox" id={item.id} checked={item.complete} onClick={() => toggleComplete(item)}/>
+        <button style={styles.trashButton} onClick={() => removeTodo(item)}>Trash</button>
       </li>
     );
   }

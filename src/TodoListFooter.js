@@ -3,16 +3,27 @@ import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 import ClearButton from './ClearButton';
 
-let removeCompletedItems = () => {
-  //remove the completed items
-}
-
 export default class TodoListFooter extends Component {
   render() {
+    let text = "";
+    switch(this.props.todoCount) {
+      case 0: {
+        text = "Nothing to do!";
+        break;
+      }
+      case 1: {
+        text = "Just one thing to do";
+        break;
+      }
+      default: {
+        text = "Too much to do";
+        break;
+      }
+    };
     return (
       <div style={styles.footer}>
-        {(this.props.todoCount) > 1 ? this.props.todoCount + ' Todos' : this.props.todoCount + ' Todo'}
-        <ClearButton removeCompleted={removeCompletedItems}/>
+        {(this.props.todoCount > 1) ? this.props.todoCount + " Todos" : text}
+        <ClearButton clearCompleted={this.props.clearCompleted}/>
       </div>
     );
   }
