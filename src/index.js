@@ -55,10 +55,21 @@ const styles = {
   }
 };
 
-const todos = ["Learn React", "Learn Redux", "Pet a cat"];
-
 class TodoListApp extends Component {
+  constructor() {
+    super()
+    this.state = {
+      todos: [
+        {id: 0, todo: "Learn React", completed: false},
+        {id: 1, todo: "Learn Redux", completed: false},
+        {id: 2, todo: "Pet a cat", completed: false}
+      ]
+    }
+  }
+
+
   render() {
+    const { todos } = this.state;
     return  (
       <div style={styles}>
         <TodoListHeader />

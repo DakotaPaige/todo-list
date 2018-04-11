@@ -7,8 +7,8 @@ export default class TodoList extends Component {
   render() {
     return (
       <ul style={styles.list}>
-        {this.props.todoListItems.map((item, index) => {
-          return <TodoItem key={index} item={item}/>
+        {this.props.todoListItems.map((item) => {
+          return <TodoItem key={item.id} item={item}/>
         })}
       </ul>
     );
