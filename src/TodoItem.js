@@ -7,7 +7,7 @@ export default class TodoItem extends Component {
       <li style={styles.listItem}>
         <span>{this.props.item}</span>
         <button style={styles.todoCheck}>.</button>
-        <button>Trash</button>
+        <button style={styles.trashButton}>Trash</button>
       </li>
     );
   }
@@ -22,6 +22,15 @@ const styles = {
   },
   todoCheck: {
     border: '2px solid grey',
-    borderRadius: '50%'
+    borderRadius: '50%',
+    margin: '0px 10px'
+  },
+  trashButton: {
+    backgroundColor: 'transparent',
+    border: '2px solid mediumpurple',
+    borderRadius: '3px',
+    color: 'mediumpurple',
+    textTransform: 'uppercase',
+    fontWeight: 'bold'
   }
 }

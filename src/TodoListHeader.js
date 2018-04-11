@@ -11,7 +11,7 @@ export default class TodoListHeader extends Component {
 
 const styles = {
   header: {
-    backgroundColor: 'violet',
+    backgroundColor: 'mediumpurple',
     padding: '10px 0',
     color: 'white',
     fontWeight: 'normal'

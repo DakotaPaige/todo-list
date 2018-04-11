@@ -55,7 +55,7 @@ const styles = {
   }
 };
 
-const todos = ["Learn React", "Learn Redux", "Pet a cat", "Eat food"];
+const todos = ["Learn React", "Learn Redux", "Pet a cat"];
 
 class TodoListApp extends Component {
   render() {
