@@ -1,15 +1,25 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import PropTypes from 'prop-types';
 
 export default class TodoInput extends Component {
   render() {
+    const { handleInput, addTodo } = this.props;
     return (
-      <div style={styles.toDoInput}>
-        <input type="text" placeholder="Feed the dog" style={styles.input} name="todo"></input>
-        <p style={styles.inputText}>(press enter to add)</p>
+      <div>
+        <form style={styles.toDoInput} onSubmit={event => addTodo(event)}>
+          <input type="text" placeholder="Feed the dog" style={styles.input} name="todo" onChange={event => handleInput(event)}
+          ></input>
+          <span style={styles.inputText}>(press enter to add)</span>
+        </form>
       </div>
     );
   }
+}
+
+TodoInput.propTypes = {
+  handleInput: PropTypes.func.isRequired,
+  addTodo: PropTypes.func.isRequired
 }
 
 const styles = {

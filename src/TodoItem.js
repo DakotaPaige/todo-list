@@ -16,7 +16,9 @@ export default class TodoItem extends Component {
 }
 
 TodoItem.propTypes = {
-  items: PropTypes.string.isRequired
+  item: PropTypes.string.isRequired,
+  removeTodo: PropTypes.func.isRequired,
+  toggleComplete: PropTypes.func.isRequired
 }
 
 const styles = {

@@ -11,7 +11,7 @@ export default class ClearButton extends Component {
 }
 
 ClearButton.propTypes = {
-  removeCompleted: PropTypes.shape.isRequired
+  clearCompleted: PropTypes.func.isRequired
 }
 
 const styles = {
