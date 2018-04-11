@@ -2,15 +2,12 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import TodoListHeader from './TodoListHeader';
 import TodoInput from './TodoInput';
-import TodoItem from './TodoItem';
 import TodoList from './TodoList';
 import TodoListFooter from './TodoListFooter';
 
 const styles = {
   backgroundColor: 'white',
-  width: '100vw',
   height: '100vh',
-  margin: '0',
   textAlign: 'center',
   width: '400px',
   margin: '0 auto',

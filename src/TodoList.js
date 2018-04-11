@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
 
 export default class TodoList extends Component {
   render() {
-    const { todos, toggleComplete, removeTodo } = this.props;
+    const { toggleComplete, removeTodo } = this.props;
     return (
       <ul style={styles.list}>
         {this.props.todoListItems.map((item) => {

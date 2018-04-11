@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 
 export default class TodoItem extends Component {
@@ -16,7 +15,7 @@ export default class TodoItem extends Component {
 }
 
 TodoItem.propTypes = {
-  item: PropTypes.string.isRequired,
+  item: PropTypes.object.isRequired,
   removeTodo: PropTypes.func.isRequired,
   toggleComplete: PropTypes.func.isRequired
 }
