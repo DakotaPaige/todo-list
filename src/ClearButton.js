@@ -4,12 +4,15 @@ import PropTypes from 'prop-types';
  
 export default class ClearButton extends Component {
   render() {
-    const removeCompleted = false;
-
+    const removeCompleted = this.props.removeCompleted;
     return (
-      <button style={styles.button}>Clear Completed</button>
+      <button style={styles.button} onClick={this.props.removeCompleted}>Clear Completed</button>
     )
   }
+}
+
+ClearButton.propTypes = {
+  removeCompleted: PropTypes.shape.isRequired
 }
 
 const styles = {

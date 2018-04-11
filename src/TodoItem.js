@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import PropTypes from 'prop-types';
 
 export default class TodoItem extends Component {
   render() {
@@ -11,6 +12,10 @@ export default class TodoItem extends Component {
       </li>
     );
   }
+}
+
+TodoItem.propTypes = {
+  items: PropTypes.string.isRequired
 }
 
 const styles = {
